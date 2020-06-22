@@ -25,13 +25,18 @@ class _CameraAppState extends State<CameraApp> {
   @override
   void initState() {
     super.initState();
-    controller = CameraController(cameras[0], ResolutionPreset.medium);
-    controller.initialize().then((_) {
+    
+    availableCameras().then((cams) {
+      cameras=cams;
+      controller = CameraController(cameras[1], ResolutionPreset.medium);
+      controller.initialize().then((_) {
       if (!mounted) {
         return;
       }
       setState(() {});
     });
+    });
+    
   }
 
   @override
@@ -45,9 +50,16 @@ class _CameraAppState extends State<CameraApp> {
     if (!controller.value.isInitialized) {
       return Container();
     }
-    return AspectRatio(
-        aspectRatio:
-        controller.value.aspectRatio,
-        child: CameraPreview(controller));
+    final size = MediaQuery.of(context).size;
+    final deviceRatio = size.width / size.height;
+    return Transform.scale(
+      scale: controller.value.aspectRatio / deviceRatio,
+      child: Center(
+        child: AspectRatio(
+          aspectRatio: controller.value.aspectRatio,
+          child: CameraPreview(controller),
+        ),
+      ),
+    );
   }
 }

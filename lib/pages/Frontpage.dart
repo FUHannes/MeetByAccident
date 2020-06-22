@@ -10,7 +10,7 @@ class Frontpage extends StatelessWidget {
       children: <Widget>[
         VideoBG(),
         Container(
-          color: Theme.of(context).canvasColor.withAlpha(155),
+          color: Theme.of(context).canvasColor.withAlpha(20),
         ),
         Column(
           children: <Widget>[
@@ -33,7 +33,7 @@ class ProfileRow extends StatelessWidget {
           ProfileIcon(me,radius: 30,),
           SizedBox(width:10),
           //TODO: real name
-          Text(me.name,maxLines: 2, style: TextStyle(fontSize:22,color: Theme.of(context).textTheme.headline1.color,),),
+          Text(me.name,maxLines: 2, style: TextStyle(fontSize:22,color: Theme.of(context).textTheme.headline2.color,),),
         ],
       ),
     );
@@ -51,7 +51,7 @@ class ProfileIcon extends StatelessWidget {
     return Container(
       child:CircleAvatar(
         radius: radius*1.1,
-        backgroundColor: Theme.of(context).primaryColor,
+        backgroundColor: Theme.of(context).backgroundColor,
         child: CircleAvatar(
           radius: radius,
           backgroundImage:user.profileImg,
