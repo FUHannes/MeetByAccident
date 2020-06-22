@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meetby_accident/Widgets/Home/TopicChoose.dart';
 import 'package:meetby_accident/Widgets/MainDrawer.dart';
 import 'package:meetby_accident/Widgets/Reuse/VideoBG.dart';
 import 'package:meetby_accident/other/Userhelper.dart';
@@ -20,7 +21,7 @@ class Frontpage extends StatelessWidget {
             ProfileRow(),
             Column(
               children:  <Widget>[
-                
+                TopicChooser(),
               ],
             )
           ]),
