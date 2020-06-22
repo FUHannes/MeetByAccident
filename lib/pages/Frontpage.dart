@@ -30,9 +30,10 @@ class ProfileRow extends StatelessWidget {
       padding: EdgeInsets.all(40),
       child: Row(
         children: <Widget>[
-          ProfileIcon(),
+          ProfileIcon(me,radius: 30,),
+          SizedBox(width:10),
           //TODO: real name
-          Text(me.name, style: TextStyle(fontSize:22,color: Theme.of(context).textTheme.headline1.color),),
+          Text(me.name,maxLines: 2, style: TextStyle(fontSize:22,color: Theme.of(context).textTheme.headline1.color,),),
         ],
       ),
     );
@@ -50,7 +51,7 @@ class ProfileIcon extends StatelessWidget {
     return Container(
       child:CircleAvatar(
         radius: radius*1.1,
-        backgroundColor: Color(0xffFDCF09),
+        backgroundColor: Theme.of(context).primaryColor,
         child: CircleAvatar(
           radius: radius,
           backgroundImage:user.profileImg,

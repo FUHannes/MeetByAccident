@@ -5,7 +5,7 @@ class User {
   ImageProvider profileImg;
 
   User(this.name,{profileImg}){
-    this.profileImg=profileImg??AssetImage("lib/assets/icon.png");//TODO: add default user img
+    this.profileImg=profileImg??AssetImage("lib/assets/stock_profile.png");//TODO: add default user img
   }
 }
 
@@ -15,7 +15,7 @@ class UserHelper{
 
   User _currentUser;
   UserHelper._(){
-    _currentUser= User("__user_name:placeholder__");
+    _currentUser= User("user_name");
   }
 
   User get me{
