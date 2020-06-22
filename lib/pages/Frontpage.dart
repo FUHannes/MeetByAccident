@@ -40,19 +40,21 @@ class ProfileRow extends StatelessWidget {
 }
 
 class ProfileIcon extends StatelessWidget {
-  double height;
-  double width;
+  double radius;
   User user;
 
-  ProfileIcon(this.user,{this.height=100,this.width=100});
+  ProfileIcon(this.user,{this.radius=50});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image(
-        image:user.profileImg,
-        width: width,
-        height: height,
+      child:CircleAvatar(
+        radius: radius*1.1,
+        backgroundColor: Color(0xffFDCF09),
+        child: CircleAvatar(
+          radius: radius,
+          backgroundImage:user.profileImg,
+        )
       )
     );
   }
