@@ -19,9 +19,9 @@ class _TopicChooserState extends State<TopicChooser> {
             .topics(
               startsWith: suchString,
             )
-            .map((topic) => 
-              //TODO: on click open Topic-Room
-              Container(
+            .map((topic) =>
+                //TODO: on click open Topic-Room
+                Container(
                   padding: EdgeInsets.only(bottom: 20),
                   child: Text(topic.name),
                 ))
@@ -39,6 +39,7 @@ class _TopicChooserState extends State<TopicChooser> {
         }
         setState(() {
           isExpanded = false;
+          FocusScope.of(context).unfocus();
         });
       },
       child: Container(

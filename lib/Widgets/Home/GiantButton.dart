@@ -8,8 +8,9 @@ class GiantButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
+      elevation: 0,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(40),
+        borderRadius: BorderRadius.circular(20),
       ),
       fillColor: Theme.of(context).backgroundColor.withAlpha(150),
       highlightColor: Theme.of(context).primaryColor.withAlpha(60),

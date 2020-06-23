@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meetby_accident/Widgets/Home/MultiCallButton.dart';
+import 'package:meetby_accident/Widgets/Home/SingleCallButton.dart';
 import 'package:meetby_accident/Widgets/Home/TopicChoose.dart';
 import 'package:meetby_accident/Widgets/MainDrawer.dart';
 import 'package:meetby_accident/Widgets/Reuse/VideoBG.dart';
@@ -21,7 +23,8 @@ class Frontpage extends StatelessWidget {
             ProfileRow(),
             Column(
               children:  <Widget>[
-                
+                SingleCallButton(),
+                MultiCallButton(),
                 TopicChooser(),
               ],
             )
@@ -37,6 +40,7 @@ class ProfileRow extends StatelessWidget {
   Widget build(BuildContext context) {
     User me = UserHelper().me;
     return RawMaterialButton(
+      elevation: 0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(bottom: Radius.circular(40)),
       ),
