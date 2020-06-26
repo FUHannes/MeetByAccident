@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class GiantButton extends StatelessWidget {
   Widget child;
   double height;
-  GiantButton({@required this.child, this.height});
+  Function action;
+  GiantButton({@required this.child, this.height, this.action});
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +16,7 @@ class GiantButton extends StatelessWidget {
       fillColor: Theme.of(context).backgroundColor.withAlpha(150),
       highlightColor: Theme.of(context).primaryColor.withAlpha(60),
       onPressed: () {
+        this.action();
       },
       child: Container(
         height: this.height,
