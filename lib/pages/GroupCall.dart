@@ -3,7 +3,7 @@ import 'package:meetby_accident/Widgets/Call/InCallMenu.dart';
 import 'package:meetby_accident/Widgets/Call/InCallMiniMenu.dart';
 import 'package:meetby_accident/Widgets/Call/CalleeName.dart';
 
-class SingleCall extends StatelessWidget {
+class GroupCall extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int activeMiniMenu = 0;
