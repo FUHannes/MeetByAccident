@@ -46,18 +46,48 @@ class Roller extends StatefulWidget {
 }
 
 class _RollerState extends State<Roller> {
-  Widget users = Row(
-    children: <Widget>[
-      ProfileIcon(
-        UserHelper().random,
+  int userAmount = 3;
+
+  Widget users() {
+    return Row(
+      children: List.filled(
+        userAmount,
+        ProfileIcon(
+          UserHelper().random,
+          radius: 40,
+        ),
       ),
-    ],
-  );
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: users,
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          users(),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              IconButton(icon: Icon(Icons.add_box), onPressed: (){
+                setState(() {
+                  userAmount++;
+                });
+              }),
+              IconButton(icon: Icon(Icons.refresh), onPressed: (){
+                //TODO
+              }),
+              IconButton(icon: Icon(Icons.indeterminate_check_box), onPressed: (){
+                setState(() {
+                  userAmount--;
+                });
+              }),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
