@@ -56,9 +56,12 @@ flutter:
   assets:
     - lib/assets/
     - lib/assets/Photos/markus.png
+    - lib/assets/Photos/tina.png
     - lib/assets/Icons/hangUp.png
     - lib/assets/Icons/games.png
     - lib/assets/Icons/profile.png
+    - lib/assets/Icons/camera.png
+
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg
 
