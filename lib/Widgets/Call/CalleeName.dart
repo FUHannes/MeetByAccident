@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:meetby_accident/Widgets/Home/GiantButton.dart';
 
 class CalleeName extends StatelessWidget {
+  var name;
+  CalleeName({@required this.name,});
   @override
   Widget build(BuildContext context) {
     AssetImage profileAsset = AssetImage('lib/assets/Icons/profile.png');
     Image profileImage = Image(image: profileAsset, width: 40, height: 40);
-
-
     return ClipRRect(
       borderRadius: BorderRadius.circular(120.0),
       child: Padding(
@@ -20,7 +20,7 @@ class CalleeName extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children:[ Container(
                 child: Text(
-                  "Markus",
+                  name,
                   style: TextStyle(
                     fontSize: 40,
                     color: Colors.black54,

@@ -18,13 +18,12 @@ class SingleCall extends StatelessWidget {
               ),
             ),
           ),
-          new CalleeName(),
+          new CalleeName(name: 'Markus'),
           new Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              if(activeMiniMenu == 1) InCallMiniMenu(),
               InCallMenu()//your elements here
             ],
           ),
