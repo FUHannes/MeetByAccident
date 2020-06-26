@@ -3,6 +3,7 @@ import 'package:meetby_accident/Widgets/Home/MultiCallButton.dart';
 import 'package:meetby_accident/Widgets/Home/SingleCallButton.dart';
 import 'package:meetby_accident/Widgets/Home/TopicChoose.dart';
 import 'package:meetby_accident/Widgets/MainDrawer.dart';
+import 'package:meetby_accident/Widgets/Reuse/UserWidgets.dart';
 import 'package:meetby_accident/Widgets/Reuse/VideoBG.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 import 'package:meetby_accident/pages/Settings.dart';
@@ -89,24 +90,5 @@ class ProfileRow extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class ProfileIcon extends StatelessWidget {
-  double radius;
-  User user;
-
-  ProfileIcon(this.user, {this.radius = 50});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: CircleAvatar(
-            radius: radius * 1.1,
-            backgroundColor: Theme.of(context).backgroundColor,
-            child: CircleAvatar(
-              radius: radius,
-              backgroundImage: user.profileImg,
-            )));
   }
 }
