@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class User {
@@ -21,4 +23,15 @@ class UserHelper{
   User get me{
     return _currentUser;
   }
-}
+
+  User get random{
+    String name=_getRandomString(_rnd.nextInt(10));
+    return User(name);
+  }
+
+  static const _chars = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz1234567890';
+  Random _rnd = Random();
+
+  String _getRandomString(int length) => String.fromCharCodes(Iterable.generate(
+      length, (_) => _chars.codeUnitAt(_rnd.nextInt(_chars.length))));
+  }
