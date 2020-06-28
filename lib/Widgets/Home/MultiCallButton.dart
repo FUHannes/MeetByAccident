@@ -48,15 +48,26 @@ class Roller extends StatefulWidget {
 class _RollerState extends State<Roller> {
   int userAmount = 3;
 
-  Widget users() {
-    return Row(
-      children: List.filled(
-        userAmount,
-        ProfileIcon(
-          UserHelper().random,
-          radius: 40,
-        ),
-      ),
+  List<User> userList = [];
+
+  Widget users(width) {
+    return Wrap(
+      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: List.generate(userAmount, (int index) {
+        if (index >= userList.length) {
+          userList.add(UserHelper().random);
+        }
+        User user = userList[index];
+        return Column(
+          children: <Widget>[
+            ProfileIcon(
+              user,
+              radius: 90 / userAmount + 10,
+            ),
+            Text(user.name),
+          ],
+        );
+      }),
     );
   }
 
@@ -67,23 +78,33 @@ class _RollerState extends State<Roller> {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          users(),
+          Expanded(child: users(MediaQuery.of(context).size.width - 200)),
+          SizedBox(width: 20),
           Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
-              IconButton(icon: Icon(Icons.add_box), onPressed: (){
-                setState(() {
-                  userAmount++;
-                });
-              }),
-              IconButton(icon: Icon(Icons.refresh), onPressed: (){
-                //TODO
-              }),
-              IconButton(icon: Icon(Icons.indeterminate_check_box), onPressed: (){
-                setState(() {
-                  userAmount--;
-                });
-              }),
+              IconButton(
+                  icon: Icon(Icons.add_box),
+                  onPressed: () {
+                    setState(() {
+                      userAmount++;
+                    });
+                  }),
+              IconButton(
+                  icon: Icon(Icons.refresh),
+                  onPressed: () {
+                    setState(() {
+                      userList = List.generate(
+                          userAmount, (index) => UserHelper().random);
+                    });
+                  }),
+              IconButton(
+                  icon: Icon(Icons.indeterminate_check_box),
+                  onPressed: () {
+                    setState(() {
+                      userAmount -= userAmount > 1 ? 1 : 0;
+                    });
+                  }),
             ],
           ),
         ],

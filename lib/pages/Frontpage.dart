@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:meetby_accident/Widgets/Home/MultiCallButton.dart';
 import 'package:meetby_accident/Widgets/Home/SingleCallButton.dart';
 import 'package:meetby_accident/Widgets/Home/TopicChoose.dart';
-import 'package:meetby_accident/Widgets/MainDrawer.dart';
 import 'package:meetby_accident/Widgets/Reuse/UserWidgets.dart';
 import 'package:meetby_accident/Widgets/Reuse/VideoBG.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
@@ -26,7 +25,9 @@ class Frontpage extends StatelessWidget {
               children:  <Widget>[
                 SingleCallButton(),
                 MultiCallButton(),
-                TopicChooser(),
+                TopicChooser(
+                  
+                ),
               ],
             )
           ]),
@@ -63,7 +64,6 @@ class ProfileRow extends StatelessWidget {
                   radius: 30,
                 ),
                 SizedBox(width: 10),
-                //TODO: real name
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
