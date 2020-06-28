@@ -102,7 +102,7 @@ class _RollerState extends State<Roller> {
                   icon: Icon(Icons.indeterminate_check_box),
                   onPressed: () {
                     setState(() {
-                      userAmount -= userAmount > 1 ? 1 : 0;
+                      userAmount -= userAmount > 2 ? 1 : 0;
                     });
                   }),
             ],

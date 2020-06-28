@@ -7,7 +7,14 @@ import 'package:meetby_accident/Widgets/Reuse/VideoBG.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 import 'package:meetby_accident/pages/Settings.dart';
 
-class Frontpage extends StatelessWidget {
+class Frontpage extends StatefulWidget {
+  @override
+  _FrontpageState createState() => _FrontpageState();
+}
+
+class _FrontpageState extends State<Frontpage> {
+  bool _isBig = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,19 +25,29 @@ class Frontpage extends StatelessWidget {
             color: Theme.of(context).canvasColor.withAlpha(20),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-            ProfileRow(),
-            Column(
-              children:  <Widget>[
-                SingleCallButton(),
-                MultiCallButton(),
-                TopicChooser(
-                  
-                ),
-              ],
-            )
-          ]),
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                ProfileRow(),
+                Column(
+                  children: <Widget>[
+                    AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: _isBig ? 120 : 70,
+                        child: SingleCallButton()),
+                    AnimatedContainer(
+                        duration: Duration(milliseconds: 300),
+                        height: _isBig ? 300 : 70,
+                        child: MultiCallButton()),
+                    TopicChooser(
+                      onToggle: (bool big) {
+                        setState(() {
+                          _isBig = !big;
+                        });
+                      },
+                    ),
+                  ],
+                )
+              ]),
         ],
       ),
     );
@@ -56,7 +73,7 @@ class ProfileRow extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            SizedBox(height:20),
+            SizedBox(height: 20),
             Row(
               children: <Widget>[
                 ProfileIcon(
