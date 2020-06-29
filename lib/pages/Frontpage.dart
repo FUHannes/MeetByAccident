@@ -89,14 +89,14 @@ class ProfileRow extends StatelessWidget {
                       maxLines: 2,
                       style: TextStyle(
                         fontSize: 22,
-                        color: Theme.of(context).textTheme.headline1.color,
+                        color: Theme.of(context).textTheme.headline.color,
                       ),
                     ),
                     Text(
                       "Profil / Einstellungen",
                       style: TextStyle(
                         fontSize: 12,
-                        color: Theme.of(context).textTheme.headline2.color,
+                        color: Theme.of(context).textTheme.headline.color,
                       ),
                     )
                   ],

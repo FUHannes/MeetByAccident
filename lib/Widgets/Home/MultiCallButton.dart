@@ -2,14 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:meetby_accident/Widgets/Home/GiantButton.dart';
 import 'package:meetby_accident/Widgets/Reuse/UserWidgets.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
+import 'package:meetby_accident/pages/GroupCall.dart';
 
 class MultiCallButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //TODO: onclick
     return Container(
       padding: EdgeInsets.only(bottom: 20),
       child: GiantButton(
+        action: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => GroupCall()),
+          );
+        },
         child: Padding(
           padding: EdgeInsets.all(18.0),
           child: Column(
@@ -21,7 +27,7 @@ class MultiCallButton extends StatelessWidget {
                     "Zufällig mehrere Kontakte anrufen",
                     style: TextStyle(
                       fontSize: 16,
-                      color: Theme.of(context).textTheme.headline1.color,
+                      color: Theme.of(context).textTheme.headline.color,
                     ),
                   ),
                   Icon(

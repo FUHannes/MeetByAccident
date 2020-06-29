@@ -73,7 +73,7 @@ class _TopicChooserState extends State<TopicChooser> {
                         border: InputBorder.none,
                         hintText: 'Einem Themenraum beitreten',
                         hintStyle: TextStyle(
-                          color: Theme.of(context).textTheme.headline1.color,
+                          color: Theme.of(context).textTheme.headline.color,
                         ),
                       ),
                     ),
