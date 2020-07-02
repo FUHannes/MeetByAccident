@@ -5,6 +5,8 @@ import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 import 'package:meetby_accident/pages/GroupCall.dart';
 
 class MultiCallButton extends StatelessWidget {
+  final rollerKey = GlobalKey<_RollerState>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +15,9 @@ class MultiCallButton extends StatelessWidget {
         action: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => GroupCall()),
+            MaterialPageRoute(builder: (context) => GroupCall(
+              users: rollerKey.currentState.userList,
+            )),
           );
         },
         child: Padding(
@@ -37,7 +41,7 @@ class MultiCallButton extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              Roller(),
+              Roller(key:rollerKey),
             ],
           ),
         ),
@@ -47,6 +51,7 @@ class MultiCallButton extends StatelessWidget {
 }
 
 class Roller extends StatefulWidget {
+  Roller({Key key}) : super(key: key);
   @override
   _RollerState createState() => _RollerState();
 }

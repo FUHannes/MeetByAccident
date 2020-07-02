@@ -2,8 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:meetby_accident/Widgets/Call/InCallMenu.dart';
 import 'package:meetby_accident/Widgets/Call/InCallMiniMenu.dart';
 import 'package:meetby_accident/Widgets/Call/CalleeName.dart';
+import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 
 class GroupCall extends StatelessWidget {
+
+  List<User> users; //die kannste jetzt nutzen
+  GroupCall({@required this.users});
+
   @override
   Widget build(BuildContext context) {
     int activeMiniMenu = 0;
