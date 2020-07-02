@@ -3,6 +3,10 @@ import 'package:meetby_accident/Widgets/Home/GiantButton.dart';
 import 'package:meetby_accident/other/datahandler/Topichelper.dart';
 
 class TopicChooser extends StatefulWidget {
+  Function onToggle;
+
+  TopicChooser({this.onToggle});
+
   @override
   _TopicChooserState createState() => _TopicChooserState();
 }
@@ -38,6 +42,7 @@ class _TopicChooserState extends State<TopicChooser> {
           Navigator.pop(context);
         }
         setState(() {
+          widget.onToggle(false);
           isExpanded = false;
           FocusScope.of(context).unfocus();
         });
@@ -59,6 +64,7 @@ class _TopicChooserState extends State<TopicChooser> {
                     width: MediaQuery.of(context).size.width - 80,
                     child: TextField(
                       onTap: () {
+                        widget.onToggle(true);
                         setState(() {
                           isExpanded = true;
                         });
@@ -67,7 +73,7 @@ class _TopicChooserState extends State<TopicChooser> {
                         border: InputBorder.none,
                         hintText: 'Einem Themenraum beitreten',
                         hintStyle: TextStyle(
-                          color: Theme.of(context).textTheme.headline1.color,
+                          color: Theme.of(context).textTheme.headline.color,
                         ),
                       ),
                     ),

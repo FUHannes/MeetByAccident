@@ -24,7 +24,7 @@ class SingleCallButton extends StatelessWidget {
                 "Zufällig einen Kontakt anrufen",
                 style: TextStyle(
                   fontSize: 16,
-                  color: Theme.of(context).textTheme.headline1.color,
+                  color: Theme.of(context).textTheme.headline.color,
                 ),
               ),
               Icon(Icons.call, color: Colors.green,),
