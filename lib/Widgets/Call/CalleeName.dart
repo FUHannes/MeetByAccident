@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meetby_accident/Widgets/Home/GiantButton.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 
 class CalleeName extends StatelessWidget {
@@ -9,8 +8,6 @@ class CalleeName extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
-    AssetImage profileAsset = AssetImage('lib/assets/Icons/profile.png');
-    Image profileImage = Image(image: profileAsset, width: 40, height: 40);
     return Padding(
       padding: EdgeInsets.only(left: 50.0, right: 50.0),
       child: ClipRRect(
@@ -31,9 +28,10 @@ class CalleeName extends StatelessWidget {
                 ),
               )),
               Container(
+                padding: EdgeInsets.symmetric(vertical:10),
                 child: GestureDetector(
                   onTap: () {}, // handle your image tap here
-                  child: profileImage,
+                  child: Image(image: user.profileImg,),
                 ),
               ),
             ],

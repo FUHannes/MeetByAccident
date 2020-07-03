@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:meetby_accident/Widgets/Call/InCallMenu.dart';
-import 'package:meetby_accident/Widgets/Call/InCallMiniMenu.dart';
 import 'package:meetby_accident/Widgets/Call/CalleeName.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 import 'package:video_player/video_player.dart';
@@ -23,7 +22,6 @@ class GroupCall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int activeMiniMenu = 0;
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -38,7 +36,6 @@ class GroupCall extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              if (activeMiniMenu == 1) InCallMiniMenu(),
               InCallMenu() //your elements here
             ],
           ),
