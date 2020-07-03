@@ -33,7 +33,7 @@ class _FrontpageState extends State<Frontpage> {
                   children: <Widget>[
                     AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        height: _isBig ? 120 : 70,
+                        height: _isBig ? 130 : 70,
                         child: SingleCallButton()),
                     AnimatedContainer(
                         duration: Duration(milliseconds: 300),

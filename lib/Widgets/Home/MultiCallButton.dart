@@ -71,9 +71,12 @@ class _RollerState extends State<Roller> {
         User user = userList[index];
         return Column(
           children: <Widget>[
-            ProfileIcon(
-              user,
-              radius: 90 / userAmount + 10,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal:4.0),
+              child: ProfileIcon(
+                user,
+                radius: 80 / userAmount + 6,
+              ),
             ),
             Text(user.name),
           ],
