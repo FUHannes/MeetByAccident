@@ -78,7 +78,7 @@ class _TopicChooserState extends State<TopicChooser> {
                     });
                   },
                   decoration: InputDecoration(
-                    border: InputBorder.none,
+                    //border: InputBorder.none,
                     hintText: 'Einem Themenraum beitreten',
                     hintStyle: TextStyle(
                       color: Theme.of(context).textTheme.headline.color,
