@@ -17,6 +17,7 @@ class _FrontpageState extends State<Frontpage> {
 
   @override
   Widget build(BuildContext context) {
+    _isBig=MediaQuery.of(context).viewInsets.bottom == 0.0;
     return Scaffold(
       body: Stack(
         children: <Widget>[
@@ -41,7 +42,7 @@ class _FrontpageState extends State<Frontpage> {
                     TopicChooser(
                       onToggle: (bool big) {
                         setState(() {
-                          _isBig = !big;
+                          //_isBig = !big;
                         });
                       },
                     ),
