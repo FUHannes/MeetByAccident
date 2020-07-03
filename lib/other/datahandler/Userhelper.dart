@@ -6,8 +6,14 @@ class User {
   String name;
   ImageProvider profileImg;
   Color favoriteColor;
+  String streamUrl;
 
-  User(this.name, {profileImg,this.favoriteColor,}) {
+  User(
+    this.name, {
+    profileImg,
+    this.favoriteColor,
+    this.streamUrl='http://techslides.com/demos/sample-videos/small.mp4'??'http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4',
+  }) {
     this.profileImg = profileImg ??
         AssetImage("lib/assets/stock_profile.png"); //TODO: add default user img
   }
@@ -27,11 +33,12 @@ class UserHelper {
   }
 
   User get random {
-    String name = _getRandomString(_rnd.nextInt(8)+1);
+    String name = _getRandomString(_rnd.nextInt(8) + 1);
     return User(
       name,
       profileImg: AssetImage("lib/assets/stock_profile.png"),
-      favoriteColor: Color.fromARGB(255, _rnd.nextInt(255), _rnd.nextInt(255), _rnd.nextInt(255)),
+      favoriteColor: Color.fromARGB(
+          255, _rnd.nextInt(255), _rnd.nextInt(255), _rnd.nextInt(255)),
     );
   }
 

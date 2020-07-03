@@ -18,7 +18,7 @@ class SingleCall extends StatelessWidget {
               ),
             ),
           ),
-          new CalleeName(name: 'Markus'),
+          //new CalleeName(name: 'Markus'),
           new Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
