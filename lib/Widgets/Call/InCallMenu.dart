@@ -35,8 +35,7 @@ class InCallMenu extends StatelessWidget {
                 children:[ Container(
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                            context, MaterialPageRoute(builder: (context) => Frontpage()));
+                        Navigator.pop(context);
                       }, // handle your image tap here
                       child: hangUpImage,
                     )
