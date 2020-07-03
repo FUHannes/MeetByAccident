@@ -5,9 +5,23 @@ import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 import 'package:video_player/video_player.dart';
 import 'package:flutter/material.dart';
 
-class GroupCall extends StatelessWidget {
-  List<User> users; //die kannste jetzt nutzen
+class GroupCall extends StatefulWidget {
+  List<User> users; 
   GroupCall({@required this.users});
+
+  @override
+  _GroupCallState createState() => _GroupCallState();
+}
+
+class _GroupCallState extends State<GroupCall> {
+
+  List<User> users;
+
+  @override
+  void initState() {
+    super.initState();
+    users=widget.users;
+  }
 
   Widget userCol(user) {
     return Stack(children: <Widget>[
@@ -29,14 +43,20 @@ class GroupCall extends StatelessWidget {
             cacheExtent: 1000,
             //mainAxisSize: MainAxisSize.max,
             //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: users.map((user) => userCol(user)).toList(),
+            children: widget.users.map((user) => userCol(user)).toList(),
           ),
           new Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              InCallMenu() //your elements here
+              InCallMenu(
+                onUserAdded: (u){
+                  setState(() {
+                    users.add(u);
+                  });
+                },
+              ) //your elements here
             ],
           ),
         ],

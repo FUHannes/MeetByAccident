@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:meetby_accident/pages/Frontpage.dart';
+import 'package:meetby_accident/pages/SingleCall.dart';
 
 class InCallMenu extends StatefulWidget {
+  Function onUserAdded;
+  InCallMenu({this.onUserAdded});
   @override
   _InCallMenuState createState() => _InCallMenuState();
 }
@@ -54,7 +56,14 @@ class _InCallMenuState extends State<InCallMenu> {
                   IconButton(
                     color: Colors.green,
                     icon: Icon(Icons.person_add),
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(context: context,
+                      builder:(BuildContext context){
+                        return SingleCall(callback: (user){print(user);Navigator.pop(context);
+                          widget.onUserAdded(user);
+                        },);
+                      },);
+                    },
                   ),
                 ],
               ),
