@@ -17,6 +17,15 @@ class User {
     this.profileImg = profileImg ??
         AssetImage("lib/assets/stock_profile.png"); //TODO: add default user img
   }
+
+  factory User.morph(User u,
+    {String name, 
+    profileImg,
+    Color favoriteColor,
+    String streamUrl,
+  }){
+    return User(name??u.name,profileImg: profileImg??u.profileImg,favoriteColor: favoriteColor??u.favoriteColor, streamUrl: streamUrl??u.streamUrl);
+  }
 }
 
 class UserHelper {
@@ -28,8 +37,13 @@ class UserHelper {
     _currentUser = User("user_name");
   }
 
+//TODO: make persistent
   User get me {
     return _currentUser;
+  }
+
+  set me(User user) {
+    _currentUser=user;
   }
 
   User get random {
