@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
+import 'package:meetby_accident/pages/ProfileInfo.dart';
 
 class CalleeName extends StatelessWidget {
   User user;
@@ -30,7 +31,8 @@ class CalleeName extends StatelessWidget {
               Container(
                 padding: EdgeInsets.symmetric(vertical:10),
                 child: GestureDetector(
-                  onTap: () {}, // handle your image tap here
+                  onTap: () {Navigator.push(
+                      context, MaterialPageRoute(builder: (context) => ProfileInfo(user: user)));}, // handle your image tap here
                   child: Image(image: user.profileImg,),
                 ),
               ),
