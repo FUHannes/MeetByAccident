@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:meetby_accident/Widgets/Reuse/UserWidgets.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 import 'package:meetby_accident/pages/GroupCall.dart';
+import 'package:meetby_accident/pages/ProfileInfo.dart';
+
 
 class SingleCall extends StatelessWidget {
 
@@ -14,14 +16,8 @@ class SingleCall extends StatelessWidget {
     User user = UserHelper().random;
     return Scaffold(
       backgroundColor: (callback!=null)?Theme.of(context).canvasColor.withAlpha(100):null,
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ProfileIcon(user),
-            Text(user.name),
-          ],
-        ),
+      body: ProfileInfo(
+        user: user
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
@@ -30,7 +26,7 @@ class SingleCall extends StatelessWidget {
           if(callback!=null){
             callback(user);
           }else{
-            Navigator.push(
+            Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => GroupCall(users:[user])));
           }
       }),
