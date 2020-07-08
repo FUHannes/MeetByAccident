@@ -20,7 +20,7 @@ class User {
     this.hobbies,
     profileImg,
     this.favoriteColor,
-    this.streamUrl='http://clips.vorwaerts-gmbh.de/VfE_html5.mp4'??'http://techslides.com/demos/sample-videos/small.mp4'??'http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4',
+    this.streamUrl='https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4'??'http://clips.vorwaerts-gmbh.de/VfE_html5.mp4'??'http://techslides.com/demos/sample-videos/small.mp4'??'http://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4',
   }) {
     this.profileImg = profileImg ??
         AssetImage("lib/assets/stock_profile.png"); //TODO: add default user img

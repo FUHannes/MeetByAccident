@@ -3,14 +3,12 @@ import 'package:meetby_accident/Widgets/Reuse/UserWidgets.dart';
 import 'package:meetby_accident/other/datahandler/Userhelper.dart';
 
 class ProfileInfo extends StatelessWidget {
-
-  ///if null: new singlecall
-  Function callback;
   User user;
   ProfileInfo({@required this.user});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.transparent,
         body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
