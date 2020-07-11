@@ -124,4 +124,17 @@ var names = ['Stephanie','Hanna','James','Stephan','Lora', 'Lauren', 'Reem', 'Di
 var countries = ['Germany','USA','France','Italy','Spain', 'Finland', 'Chile' , 'Russia', 'Brazil','India','Jordan'];
 var cities = ['Berlin','New York','Paris','Rome','Madrid', 'Swarika','Merona', 'Moskau', 'Samba' , 'Mumbay' , 'Amman'];
 var hobbies = ['Basketball, Music, Politics', 'Art, Music', 'Football, Music, Politics', 'Guitar, Bars, Reading', 'Boxing, Music, Newspapers', 'Chess, Cello', 'Football, Music, Politics', 'Guitar, Bars, Reading', 'Boxing, Music, Newspapers', 'Chess, Cello', 'Football, Music, Politics', 'Guitar, Bars, Reading', 'Boxing, Music, Newspapers', 'Chess, Cello'];
-var videos = ['','https://media.istockphoto.com/videos/smiling-indian-woman-vlogger-speaking-looking-at-camera-at-home-video-id1180677533?b=1&k=6&m=1180677533&h=F_OFJLAkeCBEnvhpuLDbIYt4Z1tKsxwM9J9mxmYlirw=','https://player.vimeo.com/external/405203426.sd.mp4?s=05d98e489a9a80a48e968a59edddf9fc885cc2ae&profile_id=164','https://player.vimeo.com/external/402606947.sd.mp4?s=157e490c0abe19576ec874926992bb49a533976b&profile_id=164',''];
+var videos = [
+  '',
+  'https://media.istockphoto.com/videos/smiling-indian-woman-vlogger-speaking-looking-at-camera-at-home-video-id1180677533?b=1&k=6&m=1180677533&h=F_OFJLAkeCBEnvhpuLDbIYt4Z1tKsxwM9J9mxmYlirw=',
+  'https://player.vimeo.com/external/405203426.sd.mp4?s=05d98e489a9a80a48e968a59edddf9fc885cc2ae&profile_id=164',
+  'https://ak.picdn.net/shutterstock/videos/1047036961/preview/stock-footage-smiling-young-adult-man-vlogger-look-at-camera-talk-make-live-video-conference-call-online-chat.webm',
+  'https://ak.picdn.net/shutterstock/videos/1040399903/preview/stock-footage-close-up-portrait-of-joyful-young-woman-with-bright-hair-piercing-and-dental-braces-standing-alone.webm',
+'',
+'',
+'',
+'',
+'', //m
+'',
+'',
+'',];
