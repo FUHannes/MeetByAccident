@@ -94,7 +94,7 @@ class ProfileRow extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      "Profil / Einstellungen",
+                      "Settings",
                       style: TextStyle(
                         fontSize: 12,
                         color: Theme.of(context).textTheme.headline.color,

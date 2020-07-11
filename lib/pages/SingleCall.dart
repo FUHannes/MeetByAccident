@@ -13,7 +13,7 @@ class SingleCall extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    User user = UserHelper().random;
+    User user = UserHelper().generate;
     return Scaffold(
       backgroundColor: (callback!=null)?Theme.of(context).canvasColor.withAlpha(100):null,
       body: ProfileInfo(

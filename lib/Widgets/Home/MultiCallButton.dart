@@ -28,7 +28,7 @@ class MultiCallButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
                   Text(
-                    "Zufällig mehrere Kontakte anrufen",
+                    "Call multiple random persons",
                     style: TextStyle(
                       fontSize: 16,
                       color: Theme.of(context).textTheme.headline.color,
@@ -66,7 +66,7 @@ class _RollerState extends State<Roller> {
       //mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: List.generate(userAmount, (int index) {
         if (index >= userList.length) {
-          userList.add(UserHelper().random);
+          userList.add(UserHelper().generate);
         }
         User user = userList[index];
         return Column(
@@ -109,7 +109,7 @@ class _RollerState extends State<Roller> {
                   onPressed: () {
                     setState(() {
                       userList = List.generate(
-                          userAmount, (index) => UserHelper().random);
+                          userAmount, (index) => UserHelper().generate);
                     });
                   }),
               IconButton(

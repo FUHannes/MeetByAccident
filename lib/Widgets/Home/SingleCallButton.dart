@@ -21,7 +21,7 @@ class SingleCallButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                "Zufällig einen Kontakt anrufen",
+                "Call a random person",
                 style: TextStyle(
                   fontSize: 16,
                   color: Theme.of(context).textTheme.headline.color,

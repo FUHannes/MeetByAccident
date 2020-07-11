@@ -12,11 +12,9 @@ class ProfileIcon extends StatelessWidget {
     return Container(
       child: CircleAvatar(
         radius: radius * 1.1,
-        backgroundColor: Theme.of(context).backgroundColor,
         child: CircleAvatar(
           radius: radius,
           backgroundImage: user.profileImg,
-          backgroundColor: user.favoriteColor,
         ),
       ),
     );

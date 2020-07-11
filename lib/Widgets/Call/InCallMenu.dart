@@ -26,7 +26,7 @@ class _InCallMenuState extends State<InCallMenu> {
             borderRadius: BorderRadius.circular(120.0),
             child: Container(
               padding: EdgeInsets.all(10),
-              color: Theme.of(context).canvasColor,
+              color: Colors.white,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
