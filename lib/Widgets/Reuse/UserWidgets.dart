@@ -11,7 +11,7 @@ class ProfileIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: CircleAvatar(
-        radius: radius * 1.1,
+        radius: radius * 1.05,
         child: CircleAvatar(
           radius: radius,
           backgroundImage: user.profileImg,

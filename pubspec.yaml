@@ -62,6 +62,9 @@ flutter:
     - lib/assets/Icons/games.png
     - lib/assets/Icons/profile.png
     - lib/assets/Icons/camera.png
+    - lib/assets/Photos/bg.png
+    - lib/assets/Photos/bgsec.png
+
 
   #  - images/a_dot_burr.jpeg
   #  - images/a_dot_ham.jpeg

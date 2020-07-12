@@ -13,7 +13,9 @@ class TopicChooser extends StatefulWidget {
 
 class _TopicChooserState extends State<TopicChooser> {
   bool isExpanded = false;
-
+  String closedTopicHint = 'Choose topic room';
+  String openTopicHint = 'Create new topic';
+  String prefixText = '';
   FocusNode focusNode = FocusNode();
 
   Widget topicList(String suchString) {
@@ -77,9 +79,14 @@ class _TopicChooserState extends State<TopicChooser> {
                       isExpanded = true;
                     });
                   },
+                  onChanged: (text) {
+                    isExpanded = false;
+                    prefixText = 'Current topic: ';
+                  },
                   decoration: InputDecoration(
                     //border: InputBorder.none,
-                    hintText: 'Einem Themenraum beitreten',
+                    prefixText: prefixText,
+                    hintText: isExpanded? openTopicHint: closedTopicHint,
                     hintStyle: TextStyle(
                       color: Theme.of(context).textTheme.headline.color,
                     ),

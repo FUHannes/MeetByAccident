@@ -11,62 +11,72 @@ class ProfileInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            Text(user.name,   style: TextStyle( height: 2,  fontSize: 40),),
-            ProfileIcon(user, radius: 125 ),
-            Padding(
-                padding: const EdgeInsets.only(top: 100.0),
-                child: Table(
-                  children: [
-                    TableRow(
-                      children: [
-                        Container(
-                            child: Text('Age:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
-                        ),
-                        Container(
-                            child: Text(user.age.toString(), style: TextStyle( height: 2,  fontSize: 20),)
-                        ),
-                      ]
-                    ),
-                    TableRow(
+        body: new Stack(
+          children: <Widget>[
+            new Container(
+              decoration: new BoxDecoration(
+                image: new DecorationImage(image: new AssetImage("lib/assets/Photos/bgsec.png"), repeat: ImageRepeat.repeat,),
+              ),
+            )
+         ,
+            Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Text(user.name,   style: TextStyle( height: 2,  fontSize: 40),),
+                  ProfileIcon(user, radius: 125 ),
+                  Padding(
+                      padding: const EdgeInsets.only(top: 60.0),
+                      child: Table(
                         children: [
-                          Container(
-                            child: Text('Country:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
+                          TableRow(
+                              children: [
+                                Container(
+                                  child: Text('Age:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
+                                ),
+                                Container(
+                                    child: Text(user.age.toString(), style: TextStyle( height: 2,  fontSize: 20),)
+                                ),
+                              ]
                           ),
-                          Container(
-                              child: Text(user.country.toString(), style: TextStyle( height: 2,  fontSize: 20),)
+                          TableRow(
+                              children: [
+                                Container(
+                                  child: Text('Country:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
+                                ),
+                                Container(
+                                    child: Text(user.country.toString(), style: TextStyle( height: 2,  fontSize: 20),)
+                                ),
+                              ]
                           ),
-                        ]
-                    ),
-                    TableRow(
-                        children: [
-                          Container(
-                            child: Text('City:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
+                          TableRow(
+                              children: [
+                                Container(
+                                  child: Text('City:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
+                                ),
+                                Container(
+                                    child: Text(user.city.toString(), style: TextStyle( height: 2,  fontSize: 20),)
+                                ),
+                              ]
                           ),
-                          Container(
-                              child: Text(user.city.toString(), style: TextStyle( height: 2,  fontSize: 20),)
-                          ),
-                        ]
-                    ),
-                    TableRow(
-                        children: [
-                          Container(
-                            child:  Text('Hobbies:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
-                          ),
-                          Container(
-                              child: Text(user.hobbies.toString(), style: TextStyle( height: 2,  fontSize: 20),)
-                          ),
-                        ]
-                    )
-                  ],
-                )
-            ),
-          ],
-        ),
-      )
+                          TableRow(
+                              children: [
+                                Container(
+                                  child:  Text('Hobbies:\t\t\t', textAlign: TextAlign.end, style: TextStyle( height: 2,  fontSize: 20),),
+                                ),
+                                Container(
+                                    child: Text(user.hobbies.toString(), style: TextStyle( height: 2,  fontSize: 20),)
+                                ),
+                              ]
+                          )
+                        ],
+                      )
+                  ),
+                ],
+              ),
+            )
+          ]
+        )
     );
   }
 }

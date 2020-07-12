@@ -26,12 +26,12 @@ class _InCallMenuState extends State<InCallMenu> {
             borderRadius: BorderRadius.circular(120.0),
             child: Container(
               padding: EdgeInsets.all(10),
-              color: Colors.white,
+              color: Theme.of(context).canvasColor.withAlpha(150),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   IconButton(
-                    color: Colors.red,
+                    color: Colors.redAccent,
                     splashColor: Colors.red,
                     icon: Icon(Icons.call_end),
                     onPressed: () {
@@ -39,6 +39,7 @@ class _InCallMenuState extends State<InCallMenu> {
                     },
                   ),
                   IconButton(
+                    color: new Color(0xff648cac),
                     icon: Icon(
                       activeMiniMenu ? Icons.cancel : Icons.more_vert,
                     ),
@@ -49,12 +50,13 @@ class _InCallMenuState extends State<InCallMenu> {
                     },
                   ),
                   IconButton(
+                    color: Colors.amberAccent,
                     tooltip: "Games (not yet available)",
                     icon: Icon(Icons.games),
                     onPressed: () {},
                   ),
                   IconButton(
-                    color: Colors.green,
+                    color: Colors.greenAccent,
                     icon: Icon(Icons.person_add),
                     onPressed: () {
                       showDialog(context: context,
@@ -99,6 +101,7 @@ class InCallMiniMenu extends StatelessWidget {
             children: List.generate(
                 icons.length,
                 (index) => IconButton(
+                  color: new Color(0xff648cac),
                       icon: Icon(
                         icons[index],
                       ),

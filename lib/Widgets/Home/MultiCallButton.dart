@@ -40,7 +40,7 @@ class MultiCallButton extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Roller(key:rollerKey),
             ],
           ),
@@ -75,7 +75,7 @@ class _RollerState extends State<Roller> {
               padding: const EdgeInsets.symmetric(horizontal:4.0),
               child: ProfileIcon(
                 user,
-                radius: 80 / userAmount + 6,
+                radius: 60 / userAmount + 6,
               ),
             ),
             Text(user.name),
@@ -88,6 +88,7 @@ class _RollerState extends State<Roller> {
   @override
   Widget build(BuildContext context) {
     return Container(
+
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -98,14 +99,14 @@ class _RollerState extends State<Roller> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               IconButton(
-                  icon: Icon(Icons.add_box),
+                  icon: Icon(Icons.add_box, color: new Color(0xff648cac)),
                   onPressed: () {
                     setState(() {
                       userAmount++;
                     });
                   }),
               IconButton(
-                  icon: Icon(Icons.refresh),
+                  icon: Icon(Icons.refresh, color: new Color(0xff648cac)),
                   onPressed: () {
                     setState(() {
                       userList = List.generate(
@@ -113,7 +114,7 @@ class _RollerState extends State<Roller> {
                     });
                   }),
               IconButton(
-                  icon: Icon(Icons.indeterminate_check_box),
+                  icon: Icon(Icons.indeterminate_check_box, color: new Color(0xff648cac)),
                   onPressed: () {
                     setState(() {
                       userAmount -= userAmount > 2 ? 1 : 0;

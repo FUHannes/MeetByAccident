@@ -99,7 +99,7 @@ class _UserVideoState extends State<UserVideo> {
       
       child: _controller.value.initialized
           ? AspectRatio(
-              aspectRatio: this.usersCount == 1 ? 4/6 : this.usersCount == 2 ? 1 : 6/4,
+              aspectRatio: this.usersCount == 1 ? 5/10 : this.usersCount == 2 ? 1 : 6/4,
               child: VideoPlayer(_controller),
             )
           : Container(),

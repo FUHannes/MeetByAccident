@@ -21,7 +21,11 @@ class _FrontpageState extends State<Frontpage> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          VideoBG(),
+          new Container(
+            decoration: new BoxDecoration(
+              image: new DecorationImage(image: new AssetImage("lib/assets/Photos/bg.png"), repeat: ImageRepeat.repeat,),
+            ),
+          ),
           Container(
             color: Theme.of(context).canvasColor.withAlpha(20),
           ),
@@ -33,11 +37,11 @@ class _FrontpageState extends State<Frontpage> {
                   children: <Widget>[
                     AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        height: _isBig ? 130 : 70,
+                        height: _isBig ? 130 : 1,
                         child: SingleCallButton()),
                     AnimatedContainer(
                         duration: Duration(milliseconds: 300),
-                        height: _isBig ? 300 : 70,
+                        height: _isBig ? 310 : 1,
                         child: MultiCallButton()),
                     TopicChooser(
                       onToggle: (bool big) {

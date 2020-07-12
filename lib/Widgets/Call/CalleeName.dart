@@ -16,7 +16,7 @@ class CalleeName extends StatelessWidget {
         child: Container(
           height: 60.0,
           width: double.infinity,
-          color: Colors.white,
+          color: Theme.of(context).canvasColor.withAlpha(150),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -25,7 +25,7 @@ class CalleeName extends StatelessWidget {
                 user.name,
                 style: TextStyle(
                   fontSize: 40,
-                  color: Colors.black54,
+                  color: Colors.white,
                 ),
               )),
               Container(

@@ -26,6 +26,7 @@ class MaterialAppWithTheme extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeChanger theme = Provider.of<ThemeChanger>(context);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Wow, schonmal ein Anfang',
       theme: theme.getThemeLIGHT(),
       darkTheme: theme.getThemeDARK(),
